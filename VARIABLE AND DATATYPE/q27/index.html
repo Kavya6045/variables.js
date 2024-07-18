@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Temperature Converter</h1>
+    <div class="result" id="result"></div>
+    
+    <script>
+      
+        function celsiusToFahrenheit(celsius) {
+            return (celsius * 9/5) + 32;
+        }
+
+        function fahrenheitToCelsius(fahrenheit) {
+            return (fahrenheit - 32) * 5/9;
+        }
+
+        let celsiusTemp = 25;
+        let fahrenheitTemp = 77;
+
+        let fahrenheitResult = celsiusToFahrenheit(celsiusTemp);
+        console.log(`Celsius to Fahrenheit: ${celsiusTemp}°C = ${fahrenheitResult}°F`);
+        document.getElementById('result').innerHTML += `<p>Celsius to Fahrenheit: ${celsiusTemp}°C = ${fahrenheitResult.toFixed(2)}°F</p>`;
+
+        let celsiusResult = fahrenheitToCelsius(fahrenheitTemp);
+        console.log(`Fahrenheit to Celsius: ${fahrenheitTemp}°F = ${celsiusResult}°C`);
+        document.getElementById('result').innerHTML += `<p>Fahrenheit to Celsius: ${fahrenheitTemp}°F = ${celsiusResult.toFixed(2)}°C</p>`;
+    </script>
+</body>
+</html>

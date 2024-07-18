@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+    let basePrice = 100;
+
+    let discount = "10%";
+
+    let discountPercentage = parseInt(discount, 10);
+
+    let discountAmount = (discountPercentage / 100) * basePrice;
+    let finalPrice = basePrice - discountAmount;
+
+    console.log("The final price after discount is:", finalPrice);
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Salary Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Employee Salary Calculator</h1>
+    <div class="result" id="result"></div>
+    
+    <script>
+      
+        let basicSalary = 5000; 
+        let hra = 1500;  
+        let otherAllowances = 800;
+
+        function calculateSalaries(basic, hra, other) {
+            let monthlySalary = basic + hra + other;
+            let annualSalary = monthlySalary * 12; 
+            return { monthlySalary, annualSalary };
+        }
+
+        let salaries = calculateSalaries(basicSalary, hra, otherAllowances);
+
+        let monthlySalary = salaries.monthlySalary;
+        let annualSalary = salaries.annualSalary;
+
+        console.log(`Basic Salary: $${basicSalary}`);
+        console.log(`House Rent Allowance (HRA): $${hra}`);
+        console.log(`Other Allowances: $${otherAllowances}`);
+        console.log(`Monthly Salary: $${monthlySalary}`);
+        console.log(`Annual Salary: $${annualSalary}`);
+
+        document.getElementById('result').innerHTML = `
+            <p>Basic Salary: $${basicSalary}</p>
+            <p>House Rent Allowance (HRA): $${hra}</p>
+            <p>Other Allowances: $${otherAllowances}</p>
+            <p>Total Monthly Salary: $${monthlySalary.toFixed(2)}</p>
+            <p>Total Annual Salary: $${annualSalary.toFixed(2)}</p>
+        `;
+    </script>
+</body>
+</html>
